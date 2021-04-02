@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">Parks</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container my-2">
+
+    <br>
+    <br>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+        <tbody>
+        <tr>
+            <td>Name:</td>
+            <td th:text="${dublinPark.name}"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td th:text="${dublinPark.description}"></td>
+        </tr>
+        <tr>
+            <td>Opening Hours This Week:</td>
+            <td th:text="${dublinPark.openingHoursWeek}"></td>
+        </tr>
+        <tr>
+            <td>Opening Hours Months:</td>
+            <td th:text="${dublinPark.openingHoursMonth}"></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td th:text="${dublinPark.phone}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td th:text="${dublinPark.email}"></td>
+        </tr>
+        <tr>
+            <td>Facilities:</td>
+            <td th:text="${dublinPark.facilities}"></td>
+        </tr><tr>
+            <td>Accessibility:</td>
+            <td th:text="${dublinPark.accessibility}"></td>
+        </tr><tr>
+            <td>Address:</td>
+            <td th:text="${dublinPark.address}"></td>
+        </tr>
+
+        </tbody>
+        <a th:href="@{/dublinPark}" class="btn btn-primary"> Back to all Dublin Parks</a>
+        <br/>
+        <br/>
+    </table>
+</div>
+</body>
+</html>

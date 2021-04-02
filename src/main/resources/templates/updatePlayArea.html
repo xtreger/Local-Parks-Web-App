@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">Parks</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>Update Fingal County Play Area</h3>
+            <form action="#" th:action="@{/addPlayAreas}" th:object="${playAreas}"
+                  method="POST">
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <input type="text" th:field="*{name}"
+                       placeholder="Name" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{address1}"
+                       placeholder="Address 1" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{address2}"
+                       placeholder="Address 2" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{address3}"
+                       placeholder="Address 3" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{address4}"
+                       placeholder="Address 4" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{phone}"
+                       placeholder="Phone" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{email}"
+                       placeholder="Email" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{website}"
+                       placeholder="Website" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{type}"
+                       placeholder="Type" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{category}"
+                       placeholder="Category" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{openingHours}"
+                       placeholder="Opening Hours" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{directions}"
+                       placeholder="Directions" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{surfaceType}"
+                       placeholder="Surface Type" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{comments}"
+                       placeholder="Comments" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{accessiblePlayItems}"
+                       placeholder="Accessible Play Items" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{disabledParking}"
+                       placeholder="Disabled Parking" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{parkRanger}"
+                       placeholder="Park Ranger" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{toilets}"
+                       placeholder="Toilets" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{disabledToilets}"
+                       placeholder="Disabled Toilets" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{babyChanging}"
+                       placeholder="Baby Changing" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{seating}"
+                       placeholder="Seating" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{drinkingWater}"
+                       placeholder="Drinking Water" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{latitude}"
+                       placeholder="Latitude" class="form-control mb-4 col-4">
+                <br>
+                <input type="text" th:field="*{longitude}"
+                       placeholder="Longitude" class="form-control mb-4 col-4">
+                <br>
+
+                <button type="submit" class="btn btn-info col-2"> Update Fingal County Play Area</button>
+            </form>
+
+            <hr>
+
+            <a th:href="@{/playAreas}"> Back to all Play Areas</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
